@@ -1,0 +1,52 @@
+.root {
+  /* 居中 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 144px);
+
+  span {
+    font-size: 1rem;
+  }
+
+  .convertArea {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    align-content: center;
+    flex-wrap: nowrap;
+
+    .arrowArea {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      min-height: 160px;
+
+      .icon {
+        font-size: 36px;
+      }
+    }
+
+    .textArea {
+      display: flex;
+      flex-direction: column;
+      width: 30%;
+      @media screen and (max-width: 1360px) {
+        width: 80%;
+      }
+
+      textarea.textContent {
+        width: 100%;
+        height: 360px;
+      }
+    }
+
+    @media screen and (max-width: 1360px) {
+      flex-direction: column;
+    }
+  }
+}

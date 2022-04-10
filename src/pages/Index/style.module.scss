@@ -1,0 +1,12 @@
+.root {
+  /* 居中 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 144px);
+
+  span {
+    font-size: 1rem;
+  }
+}
