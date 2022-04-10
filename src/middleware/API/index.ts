@@ -1,7 +1,8 @@
 import axios from "axios";
 import CryptoJS from "crypto-js";
+import Config from "../../config";
 
-const baseUrl = process.env.BASE_URL;
+const baseUrl = Config.backend;
 
 const getBaseUrl = () => {
     if (process.env.NODE_ENV === "development") {
@@ -10,9 +11,16 @@ const getBaseUrl = () => {
     return baseUrl;
 };
 
+const siteHostname = window.location.protocol + "//" + window.location.hostname;
+
 const instance = axios.create({
     baseURL: getBaseUrl(),
     withCredentials: false,
+    headers: {
+        "X-Domain-Validate": CryptoJS.MD5(CryptoJS.enc.Utf8.parse(siteHostname))
+            .toString()
+            .toUpperCase(),
+    },
 });
 
 instance.interceptors.request.use((request) => {
