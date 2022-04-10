@@ -200,3 +200,5 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+### React Template
+/build/
