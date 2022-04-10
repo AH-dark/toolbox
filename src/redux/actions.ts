@@ -23,7 +23,7 @@ export interface ActionSetTitle extends Action {
     title: string;
 }
 
-export const setTitle = (title: string) => {
+export const setTitle: ( title: string ) => ActionSetTitle = ( title: string) => {
     log("Set Title:", title);
     window.document.title = `${title} - AHdark Toolbox`;
     return {

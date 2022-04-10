@@ -1,11 +1,11 @@
-import axios    from "axios";
+import axios from "axios";
 import CryptoJS from "crypto-js";
-import Config   from "../../config";
+import Config from "../../config";
 
 const baseUrl = Config.backend;
 
 const getBaseUrl = () => {
-    if ( process.env.NODE_ENV === "development" ) {
+    if (process.env.NODE_ENV === "development") {
         return "http://localhost:9000/";
     }
     return baseUrl;
@@ -13,17 +13,17 @@ const getBaseUrl = () => {
 
 const siteHostname = window.location.protocol + "//" + window.location.hostname;
 
-const instance = axios.create( {
+const instance = axios.create({
     baseURL: getBaseUrl(),
     withCredentials: false,
     headers: {
-        "X-Domain-Validate": CryptoJS.MD5( CryptoJS.enc.Utf8.parse( siteHostname ) )
+        "X-Domain-Validate": CryptoJS.MD5(CryptoJS.enc.Utf8.parse(siteHostname))
             .toString()
-            .toUpperCase()
-    }
+            .toUpperCase(),
+    },
 });
 
-instance.interceptors.request.use( ( request ) => {
+instance.interceptors.request.use((request) => {
     if (request.data.hasOwnProperty("code")) {
         request.data.code = CryptoJS.enc.Base64.stringify(
             CryptoJS.enc.Utf8.parse(request.data.code)

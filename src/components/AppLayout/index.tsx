@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useStore } from "react-redux";
 import { setAppbarKey } from "../../redux/actions";
 import { MyState } from "../../redux/reducer";
-import styles      from "./style.module.scss";
+import styles from "./style.module.scss";
 
 const AppLayout: FC = (props) => {
     const { Header, Footer, Content } = Layout;

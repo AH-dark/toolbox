@@ -1,5 +1,5 @@
 import React, { FC, useEffect } from "react";
-import AppLayout                from "../../components/AppLayout";
+import AppLayout from "../../components/AppLayout";
 import styles from "./style.module.scss";
 import { Typography } from "antd";
 import { useDispatch } from "react-redux";
@@ -10,7 +10,7 @@ const Index: FC = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(setTitle("Home"));
-    },[])
+    }, []);
     return (
         <AppLayout>
             <div className={styles.root}>
