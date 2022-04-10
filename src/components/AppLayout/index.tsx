@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Layout, Menu } from "antd";
+import { Layout, Menu, Typography } from "antd";
 import { HomeOutlined, SettingOutlined } from "@ant-design/icons";
 import { MenuInfo } from "rc-menu/lib/interface";
 import { useNavigate } from "react-router-dom";
@@ -10,8 +10,9 @@ import style from "./style.module.scss";
 
 const AppLayout: FC = (props) => {
     const { Header, Footer, Content } = Layout;
-    const navigate = useNavigate();
+    const { Text } = Typography;
 
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const store = useStore<MyState>();
     const state = store.getState();
@@ -46,7 +47,17 @@ const AppLayout: FC = (props) => {
             </Header>
             <Content className={style.content}>{props.children}</Content>
             <Footer className={style.footer}>
-                {"Copyright © 2022 AHdark All Right Reserved"}
+                <Text className={style.copyright}>
+                    {"Copyright © 2022 "}
+                    <a
+                        href={"https://ahdark.com"}
+                        rel={"author noopener"}
+                        target={"_blank"}
+                    >
+                        {"AHdark"}
+                    </a>
+                    {" All Right Reserved"}
+                </Text>
             </Footer>
         </Layout>
     );

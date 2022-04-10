@@ -13,4 +13,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  .copyright {
+    font-size: 0.8rem;
+
+    a {
+      display: inline-block;
+    }
+  }
 }
