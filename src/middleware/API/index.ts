@@ -18,7 +18,7 @@ const siteSecret = CryptoJS.MD5(CryptoJS.enc.Utf8.parse(siteHostname))
 
 const instance = axios.create({
     baseURL: getBaseUrl(),
-    withCredentials: false,
+    withCredentials: !(process.env.NODE_ENV==="development"),
     headers: {
         "X-Domain-Validate": siteSecret,
     },
