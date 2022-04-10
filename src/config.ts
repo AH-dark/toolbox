@@ -1,5 +1,5 @@
 const Config = {
-    backend: "https://backend.ahdark.com",
+    backend: "https://backend.toolbox.ahdark.com",
 };
 
 export default Config;
