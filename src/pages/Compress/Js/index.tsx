@@ -1,12 +1,14 @@
 import React, { FC, useEffect, useState } from "react";
 import AppLayout from "../../../components/AppLayout";
 import styles from "./style.module.scss";
-import { Button, Input, message, Space, Typography } from "antd";
+import { Button, Grid, Input, message, Space, Typography } from "antd";
 import { setTitle } from "../../../redux/actions";
 import { useDispatch } from "react-redux";
-import { ArrowRightOutlined } from "@ant-design/icons";
+import { ArrowDownOutlined, ArrowRightOutlined } from "@ant-design/icons";
 import API from "../../../middleware/API";
 import CompressData from "../../../types/api/compressData";
+
+const { useBreakpoint } = Grid;
 
 const Js: FC = () => {
     const { Title } = Typography;
@@ -14,6 +16,9 @@ const Js: FC = () => {
     useEffect(() => {
         dispatch(setTitle("JS Compress"));
     }, []);
+
+    const screen = useBreakpoint();
+    const isLarge = screen.xxl;
 
     const { TextArea } = Input;
 
@@ -78,7 +83,17 @@ const Js: FC = () => {
                         size={24}
                         className={styles.arrowArea}
                     >
-                        <ArrowRightOutlined size={40} className={styles.icon} />
+                        {isLarge ? (
+                            <ArrowRightOutlined
+                                size={40}
+                                className={styles.icon}
+                            />
+                        ) : (
+                            <ArrowDownOutlined
+                                size={40}
+                                className={styles.icon}
+                            />
+                        )}
                         <Button
                             size={"large"}
                             type="primary"
