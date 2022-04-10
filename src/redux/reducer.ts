@@ -10,7 +10,7 @@ export interface MyState {
 
 const initState: MyState = {
     navbar: {
-        key: ["/"],
+        key: [window.location.pathname],
     },
     title: null,
 };
