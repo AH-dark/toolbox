@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Layout, Menu, Typography } from "antd";
-import { HomeOutlined, SettingOutlined } from "@ant-design/icons";
+import { CompressOutlined, HomeOutlined } from "@ant-design/icons";
 import { MenuInfo } from "rc-menu/lib/interface";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useStore } from "react-redux";
@@ -37,7 +37,7 @@ const AppLayout: FC = (props) => {
                     </Item>
                     <SubMenu
                         key="/compress"
-                        icon={<SettingOutlined />}
+                        icon={<CompressOutlined />}
                         title="Compress"
                     >
                         <Item key="/compress/js">JS</Item>

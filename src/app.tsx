@@ -1,8 +1,10 @@
-import React, { FC } from "react";
+import React, { FC }                    from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Index from "./pages/Index";
-import Js from "./pages/Compress/Js";
 import "antd/dist/antd.css";
+
+import Index                            from "./pages/Index";
+import Js                               from "./pages/Compress/Js";
+import Css                              from "./pages/Compress/Css";
 
 const APP: FC = () => {
     return (
@@ -10,6 +12,7 @@ const APP: FC = () => {
             <Routes>
                 <Route path={"/"} element={<Index />} />
                 <Route path={"/compress/js"} element={<Js />} />
+                <Route path={"/compress/css"} element={<Css />} />
             </Routes>
         </BrowserRouter>
     );
