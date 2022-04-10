@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useStore } from "react-redux";
 import { setAppbarKey } from "../../redux/actions";
 import { MyState } from "../../redux/reducer";
-import style from "./style.module.scss";
+import styles      from "./style.module.scss";
 
 const AppLayout: FC = (props) => {
     const { Header, Footer, Content } = Layout;
@@ -25,8 +25,8 @@ const AppLayout: FC = (props) => {
     const { SubMenu, Item } = Menu;
 
     return (
-        <Layout>
-            <Header className={style.header}>
+        <Layout className={styles.root}>
+            <Header className={styles.header}>
                 <Menu
                     onClick={handleClick}
                     selectedKeys={state.navbar.key}
@@ -45,9 +45,9 @@ const AppLayout: FC = (props) => {
                     </SubMenu>
                 </Menu>
             </Header>
-            <Content className={style.content}>{props.children}</Content>
-            <Footer className={style.footer}>
-                <Text className={style.copyright}>
+            <Content className={styles.content}>{props.children}</Content>
+            <Footer className={styles.footer}>
+                <Text className={styles.copyright}>
                     {"Copyright © 2022 "}
                     <a
                         href={"https://ahdark.com"}

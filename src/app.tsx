@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Index from "./pages/Index";
 import Js from "./pages/Compress/Js";
+import "antd/dist/antd.css";
 
 const APP: FC = () => {
     return (

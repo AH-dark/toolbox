@@ -2,4 +2,4 @@ const Config = {
     backend: "https://backend.ahdark.com",
 };
 
-export default Config
+export default Config;

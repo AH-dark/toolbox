@@ -1,24 +1,26 @@
-.header {
-  position: fixed;
-  z-index: 1;
-  width: 100%;
-  padding: 0;
-}
+.root {
+  .header {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    padding: 0;
+  }
 
-.content {
-  margin: 72px 50px 0;
-}
+  .content {
+    margin: 72px 50px 0;
+  }
 
-.footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-  .copyright {
-    font-size: 0.8rem;
+    .copyright {
+      font-size: 0.8rem;
 
-    a {
-      display: inline-block;
+      a {
+        display: inline-block;
+      }
     }
   }
 }
