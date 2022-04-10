@@ -12,14 +12,15 @@ const getBaseUrl = () => {
 };
 
 const siteHostname = window.location.protocol + "//" + window.location.hostname;
+const siteSecret = CryptoJS.MD5(CryptoJS.enc.Utf8.parse(siteHostname))
+    .toString()
+    .toUpperCase();
 
 const instance = axios.create({
     baseURL: getBaseUrl(),
     withCredentials: false,
     headers: {
-        "X-Domain-Validate": CryptoJS.MD5(CryptoJS.enc.Utf8.parse(siteHostname))
-            .toString()
-            .toUpperCase(),
+        "X-Domain-Validate": siteSecret,
     },
 });
 
